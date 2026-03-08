@@ -1,0 +1,25 @@
+{
+  "name": "NitroMecab",
+  "scheme": "nitro-mecab",
+  "plugins": [
+    "expo-asset",
+    "expo-router",
+    [
+        "expo-build-properties",
+        {
+            "ios": {
+                "deploymentTarget": "15.5"
+            }
+        }
+    ]
+  ],
+  "android": {
+    "package": "com.kuzulabz.nitromecabexample"
+  },
+  "web": {
+    "bundler": "metro"
+  },
+  "ios": {
+    "bundleIdentifier": "com.kuzulabz.nitromecabexample"
+  }
+}

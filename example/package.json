@@ -1,0 +1,55 @@
+{
+  "name": "react-native-nitro-mecab-example",
+  "main": "expo-router/entry",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "android": "expo run:android --no-build-cache",
+    "ios": "expo run:ios --no-build-cache",
+    "lint": "eslint .",
+    "start": "expo start -c",
+    "test": "jest",
+    "pod": "cd ios && pod install"
+  },
+  "dependencies": {
+    "expo": "^55.0.2",
+    "expo-asset": "~55.0.7",
+    "expo-build-properties": "~55.0.9",
+    "expo-constants": "~55.0.7",
+    "expo-dev-client": "~55.0.9",
+    "expo-file-system": "~55.0.9",
+    "expo-linking": "~55.0.7",
+    "expo-router": "~55.0.2",
+    "expo-status-bar": "~55.0.4",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "react-native": "0.83.2",
+    "react-native-nitro-modules": "0.33.9",
+    "react-native-reanimated": "4.2.1",
+    "react-native-safe-area-context": "~5.6.0",
+    "react-native-screens": "~4.23.0",
+    "react-native-web": "^0.21.0",
+    "react-native-zip-archive": "^7.0.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.3",
+    "@babel/runtime": "^7.25.0",
+    "@react-native-community/cli": "20.0.0",
+    "@react-native-community/cli-platform-android": "20.0.0",
+    "@react-native-community/cli-platform-ios": "20.0.0",
+    "@react-native/babel-preset": "0.83.2",
+    "@react-native/eslint-config": "0.83.2",
+    "@react-native/metro-config": "0.83.2",
+    "@react-native/typescript-config": "0.83.2",
+    "@types/jest": "^29.5.13",
+    "babel-plugin-module-resolver": "^5.0.2",
+    "babel-preset-expo": "~55.0.8"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "trustedDependencies": [
+    "@shopify/react-native-skia"
+  ]
+}

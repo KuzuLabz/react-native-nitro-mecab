@@ -1,0 +1,23 @@
+{
+  "$schema": "https://nitro.margelo.com/nitro.schema.json",
+  "cxxNamespace": [
+    "nitromecab"
+  ],
+  "ios": {
+    "iosModuleName": "NitroMecab"
+  },
+  "android": {
+    "androidNamespace": [
+      "nitromecab"
+    ],
+    "androidCxxLibName": "NitroMecab"
+  },
+  "autolinking": {
+    "NitroMecab": {
+      "cpp": "HybridMecab"
+    }
+  },
+  "ignorePaths": [
+    "**/node_modules"
+  ]
+}
