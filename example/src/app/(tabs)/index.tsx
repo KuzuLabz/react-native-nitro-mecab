@@ -2,19 +2,19 @@ import { Button, Pressable, ScrollView, Text, TextInput, View } from "react-nati
 import { Mecab, Token, translatePos } from '@kuzulabz/react-native-nitro-mecab';
 import { bench } from "src/utils/bench";
 import { ReactNode, useState } from "react";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { getRandomColor } from "src/utils/color";
 import { SentenceSelector } from "src/components/sentence";
 import { Container } from "src/components/container";
 
 export default function Index() {
-    // すもももももももものうち
-    // 蝉せみの不規則な鳴き声からくる錯覚かもしれない。
-    const [text, setText] = useState('他方、成績評価の甘い授業が高く評価されたり、人気取りに走る教師が出たりし、成績の安売りや大学教師のレベルダウンという弊害をもたらす恐れがある、などの反省意見もある.');
+    const [text, setText] = useState('すもももももももものうち');
     const [tokens, setTokens] = useState<Token[]>([]);
     const [tokenColors, setTokenColors] = useState<string[]>([]);
     const [selectedIdx, setSelectedIdx] = useState(0);
 
+    const {top} = useSafeAreaInsets();
+    
     const onTokenize = async () => {
         const result = bench('tokenize', () => Mecab.tokenize(text));
         setSelectedIdx(0);
@@ -28,7 +28,7 @@ export default function Index() {
     };
 
   return (
-    <SafeAreaView >
+    <View style={{paddingTop: top}}>
         <ScrollView
         contentContainerStyle={{
             paddingTop: 42,
@@ -70,6 +70,6 @@ export default function Index() {
                 </View>
             </View>}
         </ScrollView>
-    </SafeAreaView>
+    </View>
   );
 }

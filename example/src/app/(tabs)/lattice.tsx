@@ -1,7 +1,7 @@
 import { Mecab, Token } from '@kuzulabz/react-native-nitro-mecab';
 import { useMemo, useState } from 'react';
 import { Button, ScrollView, Text, TextInput, useWindowDimensions, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Container } from 'src/components/container';
 import { bench } from 'src/utils/bench';
 
@@ -9,6 +9,8 @@ const LatticePage = () => {
     const { width } = useWindowDimensions();
     const [text, setText] = useState('私は鰻');
     const [lattice, setLattice] = useState<Token[][]>();
+
+    const {top} = useSafeAreaInsets();
 
     const renderLattice = () => {
         return lattice?.map((group, idx) => 
@@ -31,7 +33,7 @@ const LatticePage = () => {
         setLattice(result);
     };
 
-    return <SafeAreaView style={{flex: 1,  paddingHorizontal: 12, paddingTop: 42}}>
+    return <View style={{flex: 1,  paddingHorizontal: 12, paddingTop: top + 42}}>
         <TextInput value={text} onChangeText={setText} multiline style={{width: '90%', alignSelf: 'center', borderRadius: 6, borderWidth: 1, padding: 8, fontSize: 16}} onSubmitEditing={getLattice} />
         <View style={{flexDirection: 'row', justifyContent: 'space-evenly', width: '100%'}}>
             <Button title="Parse" onPress={getLattice} />
@@ -41,7 +43,7 @@ const LatticePage = () => {
             {renderLattice()}
         </View>}
         </ScrollView>
-    </SafeAreaView>;
+    </View>;
 };
 
 export default LatticePage;

@@ -1,7 +1,7 @@
 import { Mecab, Node, NodeToken } from '@kuzulabz/react-native-nitro-mecab';
 import { useState } from 'react';
 import { Button, ScrollView, Text, TextInput, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Container } from 'src/components/container';
 import { SentenceSelector } from 'src/components/sentence';
 import { bench } from 'src/utils/bench';
@@ -14,6 +14,8 @@ const NodesPage = () => {
     const [nodeColors, setNodeColors] = useState<string[]>([]);
     const [selectedIdx, setSelectedIdx] = useState(0);
 
+    const {top} = useSafeAreaInsets();
+
     const onParse = async () => {
         const result = bench('parseToNode', () => Mecab.parseToNodes(text));
         setSelectedIdx(0);
@@ -22,7 +24,7 @@ const NodesPage = () => {
     };
 
     return(
-        <SafeAreaView >
+        <View style={{paddingTop: top}}>
             <ScrollView
             contentContainerStyle={{
                 paddingTop: 42,
@@ -67,7 +69,7 @@ const NodesPage = () => {
                     </View>
                 </View>}
             </ScrollView>
-        </SafeAreaView>
+        </View>
     );
 };
 
