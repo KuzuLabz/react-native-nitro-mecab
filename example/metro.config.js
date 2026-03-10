@@ -7,6 +7,6 @@ const config = getDefaultConfig(__dirname);
 
 config.watchFolders.push(root);
 
-config.resolver.assetExts.push('def', 'txt');
+config.resolver.assetExts.push('zip');
 
 module.exports = config;
