@@ -1,7 +1,5 @@
-/* eslint-disable @typescript-eslint/no-require-imports */
 import { Asset } from 'expo-asset';
 import { Directory, File, Paths } from 'expo-file-system';
-import { fetch } from 'expo/fetch';
 import {unzip} from 'react-native-zip-archive';
 
 const unzipDict = async (targetUri: string) => {
@@ -14,6 +12,8 @@ const unzipDict = async (targetUri: string) => {
 export const processDictionary = async () => {
     const dictDir = new Directory(Paths.document, 'dict');
     dictDir.create({idempotent: true});
+
+    console.log(dictDir.list().map((d) => d.name));
 
     if (dictDir.list().length > 0) {
         console.log(dictDir.list().map((item) => item.name));

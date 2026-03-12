@@ -12,7 +12,7 @@ module.exports = {
     },
     dependencies: {
         [pkg.name]: {
-            root: path.join(__dirname, '..'),
+            root: path.join(__dirname, '../'),
         },
     },
 }

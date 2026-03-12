@@ -12,22 +12,21 @@
     "pod": "cd ios && pod install"
   },
   "dependencies": {
-    "expo": "^55.0.2",
-    "expo-asset": "~55.0.7",
+    "@kuzulabz/react-native-nitro-mecab": "*",
+    "expo": "^55.0.6",
+    "expo-asset": "~55.0.8",
     "expo-build-properties": "~55.0.9",
     "expo-constants": "~55.0.7",
-    "expo-dev-client": "~55.0.9",
-    "expo-file-system": "~55.0.9",
+    "expo-dev-client": "~55.0.16",
+    "expo-file-system": "~55.0.10",
     "expo-linking": "~55.0.7",
-    "expo-router": "~55.0.2",
+    "expo-router": "~55.0.5",
     "expo-status-bar": "~55.0.4",
     "react": "19.2.0",
     "react-dom": "19.2.0",
     "react-native": "0.83.2",
-    "react-native-nitro-modules": "0.33.9",
-    "react-native-reanimated": "4.2.1",
-    "react-native-safe-area-context": "~5.6.0",
-    "react-native-screens": "~4.23.0",
+    "react-native-nitro-modules": "^0.35.0",
+    "react-native-safe-area-context": "~5.6.2",
     "react-native-web": "^0.21.0",
     "react-native-zip-archive": "^7.0.2"
   },
@@ -43,13 +42,20 @@
     "@react-native/metro-config": "0.83.2",
     "@react-native/typescript-config": "0.83.2",
     "@types/jest": "^29.5.13",
+    "@types/react": "~19.2.10",
     "babel-plugin-module-resolver": "^5.0.2",
     "babel-preset-expo": "~55.0.8"
   },
+  "expo": {
+    "autolinking": {
+      "nativeModulesDir": "../node_modules",
+      "searchPaths": [
+        "../node_modules",
+        "..package"
+      ]
+    }
+  },
   "engines": {
     "node": ">=20"
-  },
-  "trustedDependencies": [
-    "@shopify/react-native-skia"
-  ]
+  }
 }

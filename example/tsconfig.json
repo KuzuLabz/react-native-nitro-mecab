@@ -6,7 +6,7 @@
     "strict": true,
     "baseUrl": ".",
     "paths": {
-      "@kuzulabz/react-native-nitro-mecab": ["../src"]
+      "@kuzulabz/react-native-nitro-mecab": ["../package/src/index"]
     }
   }
 }

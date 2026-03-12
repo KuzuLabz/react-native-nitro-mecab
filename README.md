@@ -1,6 +1,8 @@
 # react-native-nitro-mecab
 
-A Mecab react native package built with Nitro.
+A Mecab react native package built with Nitro for Android and iOS.
+
+Web support soon?
 
 [![Version](https://img.shields.io/npm/v/@kuzulabz/react-native-nitro-mecab.svg)](https://www.npmjs.com/package/@kuzulabz/react-native-nitro-mecab)
 [![Downloads](https://img.shields.io/npm/dm/@kuzulabz/react-native-nitro-mecab.svg)](https://www.npmjs.com/package/@kuzulabz/react-native-nitro-mecab)

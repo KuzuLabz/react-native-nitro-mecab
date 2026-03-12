@@ -6,6 +6,7 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { getRandomColor } from "src/utils/color";
 import { SentenceSelector } from "src/components/sentence";
 import { Container } from "src/components/container";
+import { Directory, Paths } from "expo-file-system";
 
 export default function Index() {
     const [text, setText] = useState('すもももももももものうち');

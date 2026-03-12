@@ -1,17 +1,4 @@
-// export const getRandomColor = (() => {
-// 	const randomInt = (min: number, max: number) => {
-// 		return Math.floor(Math.random() * (max - min + 1)) + min;
-// 	};
-
-// 	return () => {
-// 		let h = randomInt(0, 360);
-// 		let s = randomInt(42, 98);
-// 		let l = randomInt(40, 90);
-// 		return `hsl(${h},${s}%,${l}%)`;
-// 	};
-// })();
-
-function hslToRgb(h: number, s: number, l: number): { r: number; g: number; b: number } {
+const hslToRgb = (h: number, s: number, l: number): { r: number; g: number; b: number } => {
   h = h % 360;
   if (h < 0) h += 360;
 
@@ -44,11 +31,7 @@ function hslToRgb(h: number, s: number, l: number): { r: number; g: number; b: n
   };
 }
 
-export const getRandomColor = (count: number, opacity: number = 0.5) => {
-    // const red = Math.floor(Math.random() * 255)
-    // const green = Math.floor(Math.random() * 255)
-    // const blue = Math.floor(Math.random() * 255)
-    // return `rgba(${red}, ${green}, ${blue}, ${opacity})`
+export const getRandomColor = (count: number, opacity: number = 1) => {
     if (count <= 0) return [];
   if (count === 1) return ["rgb(240, 240, 245)"];
 
@@ -78,7 +61,7 @@ export const getRandomColor = (count: number, opacity: number = 0.5) => {
       lightness / 100
     );
 
-    colors.push(`rgb(${rgb.r}, ${rgb.g}, ${rgb.b})`);
+    colors.push(`rgb(${rgb.r}, ${rgb.g}, ${rgb.b}, ${opacity})`);
   }
 
   return colors;
