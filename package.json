@@ -1,5 +1,5 @@
 {
-    "name": "nitro-image-compressor",
+    "name": "react-native-nitro-mecab-monorepo",
     "version": "0.1.0",
     "scripts": {
         "release": "./scripts/release.sh"
